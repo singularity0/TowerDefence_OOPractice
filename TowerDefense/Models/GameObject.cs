@@ -5,8 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TowerDefense.Models
-{
-    public class GameObject
+{   
+    /// <summary>
+    /// Class is repsonsible for Drawing the Game Objects;
+    /// </summary>
+    public abstract class GameObject
     {
         private float wx, wy;
         //public float WorldX { get { return wx; } set { wx = value; screenspr = new RectangleF(ViewX, ViewY, ViewX + Width, ViewY + Height); } }

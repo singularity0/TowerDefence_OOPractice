@@ -10,6 +10,7 @@ namespace TowerDefense.Utils
     {
         public const string WrongUsernameExceptionMessage = "Wrong username, please enter your username with more that 2 symbols!";
         public const string EnemyTypeExceptionMessage = "You must specify what kind of enemy item you want to create!";
+        public const string OutsideOfTheMatrix = "The value is outside the range of the current level matrix";
 
         public Exceptions(string message)
             : base(message)

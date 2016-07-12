@@ -26,12 +26,8 @@ namespace TowerDefense
             }
 
             IUser myUser = new TowerDefenceFactory().CreateUser("Nindja", Utils.LevelType.Ninja, "strong_pass");
-            IUser myUseBoom = new TowerDefenceFactory().CreateUser("N", Utils.LevelType.Ninja, "strong_pass");
+            //IUser myUserBoom = new TowerDefenceFactory().CreateUser("N", Utils.LevelType.Ninja, "Very_strong_pass");
 
-
-
-
-  
 
 
         }

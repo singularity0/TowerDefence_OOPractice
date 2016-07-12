@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TowerDefense.Interfaces;
+using TowerDefense.Models;
 using TowerDefense.Utils;
 
 namespace TowerDefense
@@ -16,7 +17,9 @@ namespace TowerDefense
         
         protected bool tileInUse = false; // Is tile in use (eg. it has a building on it)?
 
-        protected bool selected = false; // showing if this tile is selected by the mouse
+        protected bool selected = false; // showing if this tile is selected by the mouse;
+        private TileCoords coordinates;
+        
 
         public bool InUse
         {
@@ -33,11 +36,16 @@ namespace TowerDefense
         public int X { get; set; }
         public int Y { get; set; }
 
+
         public Tile(int x, int y)  
         {
             this.InUse = true;
-            this.X = x;
-            this.Y = y;
+
+            coordinates = new TileCoords(0,0);
+            coordinates.X = x;
+            coordinates.Y = y;
+            //this.X = x;
+            //this.Y = y;
         }
 
         public float? ClearTileArea(bool destroying = false) //destroying buidlings/towers (for ex. to earn some money)

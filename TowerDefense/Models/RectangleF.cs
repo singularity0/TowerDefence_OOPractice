@@ -21,8 +21,16 @@ namespace TowerDefense.Models
         public float Right { get; set; }
         public float Top { get; set; }
         public float Width { get; set; }
-        public float X { get; set; }
-        public float Y { get; set; }
+        //public float X { get; set; }
+        //public float Y { get; set; }
+
+        //public RectangleF(float bottom, float top, float left, float right)
+        //{
+        //    this.Bottom = bottom;
+        //    this.Top = top;
+        //    this.Left = left;
+        //    this.Right = right;
+        //}
 
 
         

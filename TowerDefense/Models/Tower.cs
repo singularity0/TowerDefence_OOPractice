@@ -16,18 +16,21 @@ namespace TowerDefense.Models
         private int level;
         private int cost;
         private IList<IEnemy> targets;
-        private Tile currentTile;
+        //private Tile currentTile;
+        private TileCoords coords; //keeping track of current location
 
         public Tower(int X, int Y, int level = 1, int width = 1, int height = 1)
             : base(1, 0, 0, width, height)
         {
             //this.AvailablePath = Helpers.enemyPathLvl1;   //TODO: tower should check if the Tile is vacant;
-            this.currentTile = new Tile(0, 0);
-            this.cost = 85;
+            this.coords = new TileCoords(0, 0);
+            this.Cost = 85;
             this.Level = level;
             this.targets = new List<IEnemy>();
-            currentTile.X = X;    //keeping track of current location
-            currentTile.Y = Y;    //keeping track of current location
+            //currentTile.X = X;   
+            //currentTile.Y = Y;    
+            coords.X = X;
+            coords.Y = Y;
         }
 
         public int UpgradeCost { get { return (int)(this.cost * (1 + ((float)this.Level / 5))); } }

@@ -7,7 +7,7 @@ using TowerDefense.Utils;
 
 namespace TowerDefense
 {
-    public class Map
+    public sealed class Map
     {
         private bool[,] matrix;
 

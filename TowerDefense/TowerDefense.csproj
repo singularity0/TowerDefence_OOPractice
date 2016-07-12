@@ -58,6 +58,7 @@
     <Compile Include="Models\ArcherTower.cs" />
     <Compile Include="Models\BasicTower.cs" />
     <Compile Include="Models\CannonTower.cs" />
+    <Compile Include="Models\TileCoords.cs" />
     <Compile Include="Models\Command.cs" />
     <Compile Include="Models\Enemy.cs" />
     <Compile Include="Models\GameObject.cs" />
@@ -76,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DiagramTowerDef.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,7 +8,6 @@ namespace TowerDefense
 {
     public class Ghost : Enemy
     {
-        public override int PointsForBeastKiling { get { return 50; } }
         
         public Ghost(int health, int level, float speed) : base(health, level, speed)
         {
@@ -20,9 +19,11 @@ namespace TowerDefense
 
         }
 
-        public override void DestroyPoints()
+        public override string ToString()
         {
-            User.Points += this.PointsForBeastKiling;
+            return base.ToString() + string.Format("--> I am a {0} child ", this.GetType().Name);
         }
+        
+
     }
 }

@@ -9,7 +9,9 @@ namespace TowerDefense.Utils
     public static class Helpers
     {
         public const int SPEEDDOWNPOINTS = 20;  //points to speed down the enemy with
-        public static int takeHitsFactor = 20; //user takes this many points from enemy on every hit
+        public static int HitsFactor = 20; //user takes this many health points from enemy on every hit
+        public static int moneyRegainedPerTowerDestroyed = 50; 
+        
 
         public static bool[,] matrixLvl1 = new bool[5, 10] {
                 {true, false, false, false, false, false, false, false, false, false},
@@ -37,6 +39,5 @@ namespace TowerDefense.Utils
                     new Tile( 2,9)
             };
 
-        public static int moneyRegainedPerTowerDestroyed = 100; 
     }
 }

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TowerDefense.Interfaces;
+using TowerDefense.Models;
 using TowerDefense.Utils;
 
 namespace TowerDefense
 {
-    public class Enemy
+    public abstract class Enemy : GameObject, IEnemy
     {
         protected int enemyHealth;
         protected int enemyLevel;
@@ -17,9 +19,9 @@ namespace TowerDefense
         int currentPosInAvailList; //track the current index of the Tile in the available provided list of Tiles
         protected bool isAlive;  //indicates if the enemy is alive
 
-         
 
-        public Enemy(int health, int level, float speed )
+
+        public Enemy(int health, int level, float speed, int width = 1, int height = 1 ): base(1, 0, 0, width, height)
         {
             this.isAlive = true;
             this.enemyHealth = health;
@@ -99,17 +101,10 @@ namespace TowerDefense
             }
         }
 
-        public virtual int PointsForBeastKiling { get { return 50; } }  //if we work on abstract level we get some mean value
-
-        public virtual void DestroyPoints()
-        {
-            User.Points += this.PointsForBeastKiling;
-        }
 
         public void Die()
         {
             this.isAlive = false;
-            DestroyPoints();
         }
 
         
@@ -129,9 +124,9 @@ namespace TowerDefense
             return new Tile(AvailablePath[currentPosInAvailList].X, AvailablePath[currentPosInAvailList].Y);
         }
 
-        public void TakeHits()
+        public override string ToString()
         {
-            this.Health -= Helpers.takeHitsFactor/this.Level;
+            return string.Format("Enemy Parent of All Parents");
         }
 
 

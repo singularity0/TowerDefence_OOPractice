@@ -8,8 +8,6 @@ namespace TowerDefense
 {
     public class Ogre : Enemy
     {
-        public override int PointsForBeastKiling {get { return 100; }}
-
         
         public Ogre(int health, int level, float speed) : base(health, level, speed)
         {
@@ -21,9 +19,10 @@ namespace TowerDefense
 
         }
 
-        public override void DestroyPoints()
+        public override string ToString()
         {
-            User.Points += this.PointsForBeastKiling;
+            return base.ToString() + string.Format("--> I am a {0} child ", this.GetType().Name);
         }
+
     }
 }
